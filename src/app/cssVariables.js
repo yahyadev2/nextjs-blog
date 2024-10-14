@@ -6,6 +6,7 @@ module.exports = {
     m: 1024,
     l: 1440,
   },
+
   colors: {
     base0: 'rgb(255, 255, 255)',
     base100: 'rgb(235, 235, 235)',

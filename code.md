@@ -101,7 +101,7 @@
 
   --color-white-500: rgba(255, 255, 255, 1);
   --color-white-500-20: rgba(255, 255, 255, 0.2);
-  
+
   --color-gray-500: rgba(164, 161, 170, 1);
   --color-green-500: rgba(60, 209, 57, 1);
 }
@@ -204,22 +204,22 @@ export const inclusions = [
 
 export const profileNavItems = [
   {
-    title: 'Personal Information',
+    title: 'Informations personelles',
     url: '/account',
     icon: '/assets/icons/user.svg',
   },
   {
-    title: 'My Purchases',
+    title: 'Mes achats',
     url: '/account/purchases',
     icon: '/assets/icons/purchases.svg',
   },
   {
-    title: 'My Orders',
+    title: 'Mes commandes',
     url: '/account/orders',
     icon: '/assets/icons/orders.svg',
   },
   {
-    title: 'Logout',
+    title: 'Déconnexion',
     url: '/logout',
     icon: '/assets/icons/logout.svg',
   },
@@ -419,7 +419,7 @@ export const noHeaderFooterUrls = ['/create-account', '/login', '/recover-passwo
   align-items: center;
   width: 100%;
   height: 100%;
- 
+
 
   @include mid-break {
     justify-content: flex-start;
@@ -435,7 +435,7 @@ export const noHeaderFooterUrls = ['/create-account', '/login', '/recover-passwo
 
   @include mid-break {
     backdrop-filter: blur(30px);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 243, 176, 1.0);
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
 
@@ -748,7 +748,7 @@ export const noHeaderFooterUrls = ['/create-account', '/login', '/recover-passwo
     flex-direction: row;
     gap: 40px;
   }
-  
+
   @include small-break {
     flex-direction: column;
     gap: 20px;
@@ -1270,7 +1270,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+
   h6 {
     line-height: 20px;
     margin-bottom: 8px;
@@ -1443,7 +1443,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
 .quantity {
   text-align: center;
   font-size: 18px;
-  
+
   @include small-break {
     text-align: start;
     font-size: 16px;
@@ -1587,13 +1587,13 @@ export const CheckoutPage: React.FC<{
     <Fragment>
       {cartIsEmpty && (
         <div>
-          {'Your '}
-          <Link href="/cart">cart</Link>
-          {' is empty.'}
+          {'Votre '}
+          <Link href="/cart">panier</Link>
+          {' est vide.'}
           {typeof productsPage === 'object' && productsPage?.slug && (
             <Fragment>
               {' '}
-              <Link href={`/${productsPage.slug}`}>Continue shopping?</Link>
+              <Link href={`/${productsPage.slug}`}>Continuer le shopping?</Link>
             </Fragment>
           )}
         </div>
@@ -1601,12 +1601,12 @@ export const CheckoutPage: React.FC<{
       {!cartIsEmpty && (
         <div className={classes.items}>
           <div className={classes.header}>
-            <p>Products</p>
+            <p>Produits</p>
             <div className={classes.headerItemDetails}>
               <p></p>
-              <p className={classes.quantity}>Quantity</p>
+              <p className={classes.quantity}>Quantité</p>
             </div>
-            <p className={classes.subtotal}>Subtotal</p>
+            <p className={classes.subtotal}>Total</p>
           </div>
 
           <ul>
@@ -1637,7 +1637,7 @@ export const CheckoutPage: React.FC<{
               return null
             })}
             <div className={classes.orderTotal}>
-              <p>Order Total</p>
+              <p>Total</p>
               <p>{cartTotal.formatted}</p>
             </div>
           </ul>
@@ -1651,12 +1651,12 @@ export const CheckoutPage: React.FC<{
       {!clientSecret && error && (
         <div className={classes.error}>
           <p>{`Error: ${error}`}</p>
-          <Button label="Back to cart" href="/cart" appearance="secondary" />
+          <Button label="Retour au panier" href="/cart" appearance="secondary" />
         </div>
       )}
       {clientSecret && (
         <Fragment>
-          <h3 className={classes.payment}>Payment Details</h3>
+          <h3 className={classes.payment}>Paiement</h3>
           {error && <p>{`Error: ${error}`}</p>}
           <Elements
             stripe={stripe}

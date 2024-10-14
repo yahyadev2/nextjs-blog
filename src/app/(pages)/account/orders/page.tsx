@@ -43,9 +43,9 @@ export default async function Orders() {
 
   return (
     <div>
-      <h5>My Orders</h5>
+      <h5>Mes commandes</h5>
       {(!orders || !Array.isArray(orders) || orders?.length === 0) && (
-        <p className={classes.noOrders}>You have no orders.</p>
+        <p className={classes.noOrders}>Vous n'avez aucune commande.</p>
       )}
       <RenderParams />
       {orders && orders.length > 0 && (
@@ -70,7 +70,7 @@ export default async function Orders() {
                 </div>
                 <Button
                   appearance="default"
-                  label="View Order"
+                  label="Voir la commande"
                   className={classes.button}
                   el="link"
                   href={`/account/orders/${order.id}`}

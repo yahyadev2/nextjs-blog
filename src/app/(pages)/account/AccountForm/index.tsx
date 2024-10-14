@@ -97,30 +97,30 @@ const AccountForm: React.FC = () => {
         <Fragment>
           <Input
             name="email"
-            label="Email Address"
+            label="E-mail"
             required
             register={register}
             error={errors.email}
             type="email"
           />
-          <Input name="name" label="Name" register={register} error={errors.name} />
+          <Input name="name" label="Nom" register={register} error={errors.name} />
 
           <p>
-            {'Change your account details below, or '}
+            {'Changez vos paramètres de comptes, ou '}
             <button
               type="button"
               className={classes.changePassword}
               onClick={() => setChangePassword(!changePassword)}
             >
-              click here
+              cliquer ici
             </button>
-            {' to change your password.'}
+            {' pour changer votre mot de passe.'}
           </p>
         </Fragment>
       ) : (
         <Fragment>
           <p>
-            {'Change your password below, or '}
+            {'Changez votre mot de passe si dessous , ou '}
             <button
               type="button"
               className={classes.changePassword}
@@ -133,7 +133,7 @@ const AccountForm: React.FC = () => {
           <Input
             name="password"
             type="password"
-            label="Password"
+            label="Mot de passe"
             required
             register={register}
             error={errors.password}
@@ -141,17 +141,17 @@ const AccountForm: React.FC = () => {
           <Input
             name="passwordConfirm"
             type="password"
-            label="Confirm Password"
+            label="Confirmer mot de passe"
             required
             register={register}
-            validate={value => value === password.current || 'The passwords do not match'}
+            validate={value => value === password.current || 'Les mots de passe ne sont pas identiques.'}
             error={errors.passwordConfirm}
           />
         </Fragment>
       )}
       <Button
         type="submit"
-        label={isLoading ? 'Processing' : changePassword ? 'Change Password' : 'Update Account'}
+        label={isLoading ? 'Traitement' : changePassword ? 'Changer le mot de passe' : 'Mettre à jour votre compte'}
         disabled={isLoading}
         appearance="primary"
         className={classes.submit}

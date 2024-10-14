@@ -17,7 +17,7 @@ export default async function Purchases() {
 
   return (
     <div>
-      <h5>Purchased Products</h5>
+      <h5>Produits achetés</h5>
       <div>
         {user?.purchases?.length || 0 > 0 ? (
           <ul className={classes.purchases}>
@@ -39,7 +39,7 @@ export default async function Purchases() {
                       <div className={classes.itemDetails}>
                         <h6>{purchase.title}</h6>
                         <Price product={purchase} />
-                        <p className={classes.purchasedDate}>{`Purchased On: ${formatDateTime(
+                        <p className={classes.purchasedDate}>{`Acheté le: ${formatDateTime(
                           purchase.createdAt,
                         )}`}</p>
                       </div>
@@ -50,7 +50,7 @@ export default async function Purchases() {
             })}
           </ul>
         ) : (
-          <div className={classes.noPurchases}>You have no purchases.</div>
+          <div className={classes.noPurchases}>Vous n'avez aucun achat.</div>
         )}
       </div>
     </div>

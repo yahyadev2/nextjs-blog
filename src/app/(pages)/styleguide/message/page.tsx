@@ -16,11 +16,11 @@ export default async function MessageComponentPage() {
           {' / '}
           <span>Message Component</span>
         </p>
-        <h1>Message Component</h1>
+        <h1>Composant message</h1>
       </Gutter>
       <Gutter>
         <VerticalPadding bottom="large" top="none">
-          <Message message="This is a message" />
+          <Message message="Ceci est un message" />
           <br />
           <Message error="This is an error" />
           <br />

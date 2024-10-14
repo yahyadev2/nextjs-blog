@@ -38,19 +38,19 @@ export const CartPage: React.FC<{
         <Fragment>
           {cartIsEmpty ? (
             <div className={classes.empty}>
-              Your cart is empty.
+              Votre panier est vide.
               {typeof productsPage === 'object' && productsPage?.slug && (
                 <Fragment>
                   {' '}
-                  <Link href={`/${productsPage.slug}`}>Click here</Link>
-                  {` to shop.`}
+                  <Link href={`/${productsPage.slug}`}>Cliquez ici</Link>
+                  {` pour faire votre shopping.`}
                 </Fragment>
               )}
               {!user && (
                 <Fragment>
                   {' '}
-                  <Link href={`/login?redirect=%2Fcart`}>Log in</Link>
-                  {` to view a saved cart.`}
+                  <Link href={`/login?redirect=%2Fcart`}>Connexion</Link>
+                  {` pour voir un panier enregistré.`}
                 </Fragment>
               )}
             </div>
@@ -59,11 +59,11 @@ export const CartPage: React.FC<{
               <div>
                 {/* CART LIST HEADER */}
                 <div className={classes.header}>
-                  <p>Products</p>
+                  <p>Produits</p>
                   <div className={classes.headerItemDetails}>
                     <p></p>
                     <p></p>
-                    <p>Quantity</p>
+                    <p>Quantité</p>
                   </div>
                   <p className={classes.headersubtotal}>Subtotal</p>
                 </div>
@@ -102,7 +102,7 @@ export const CartPage: React.FC<{
                 </div>
 
                 <div className={classes.row}>
-                  <p className={classes.cartTotal}>Delivery Charge</p>
+                  <p className={classes.cartTotal}>Frais de livraison</p>
                   <p className={classes.cartTotal}>$0</p>
                 </div>
 
